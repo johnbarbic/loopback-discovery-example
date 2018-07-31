@@ -84,3 +84,5 @@ JSON.stringify(config, null, 2)
     $ node ./server/bin/discovery.js
 
 If all went well you should see log output along with a new or updated file in /common/models/TABLE.json, and there will also be a new entry in /server/model-config.json
+
+7.  Run the app using $ node . and follow the instructions to the API explorer.
