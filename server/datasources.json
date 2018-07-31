@@ -1,0 +1,15 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "DATABASENAME": {
+    "host": "RDS HOST",
+    "port": 3306,
+    "database": "DATABASENAME",
+    "password": "RDSPASSWORD",
+    "name": "DATABASENAME",
+    "user": "RDSUSER",
+    "connector": "mysql"
+  }
+}
