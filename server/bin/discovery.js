@@ -25,6 +25,8 @@ async function discover() {
 
   // Discover models and relations
   const mySchema = await db.discoverSchema(TABLE_NAME_LC, options);
+  //We need this to set the modelname correctly in model-config, especially when we have complex table names
+  console.log(mySchema.name);
 
   // Create model definition files
   await mkdirp('common/models');
@@ -35,9 +37,9 @@ async function discover() {
 
   // Expose models via REST API
   const configJson = await readFile('server/model-config.json', 'utf-8');
-  console.log('MODEL CONFIG', configJson);
+  //console.log('MODEL CONFIG', configJson);
   const config = JSON.parse(configJson);
-  config[TABLE_NAME] = {dataSource: DATASOURCE_NAME, public: true};
+  config[mySchema.name] = {dataSource: DATASOURCE_NAME, public: true};
   await writeFile(
     'server/model-config.json',
     JSON.stringify(config, null, 2)

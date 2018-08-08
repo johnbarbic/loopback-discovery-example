@@ -4,7 +4,7 @@
     "connector": "memory"
   },
   "DATABASENAME": {
-    "host": "RDS HOST",
+    "host": "RDSHOST",
     "port": 3306,
     "database": "DATABASENAME",
     "password": "RDSPASSWORD",
